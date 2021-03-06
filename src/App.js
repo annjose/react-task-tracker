@@ -5,7 +5,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header title = "Awesome" a = "One" b  ="Two"/>
+      {/* <Header /> */}
     </div>
   );
 }
