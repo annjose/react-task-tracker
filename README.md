@@ -1,2 +1,2 @@
 # react-todo
-ToDo app with React JS
+Task Tracker app with React JS
