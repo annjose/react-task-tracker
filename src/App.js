@@ -29,11 +29,18 @@ function App() {
 
   const [tasks, setTasks] = useState(initialTasks)
 
+  const deleteTask = (id) => {
+    // tasks.pop()
+    console.log('BEFORE setTasks(): ', 'id to delete: ', id, '# of tasks: ', tasks.length)
+    setTasks(tasks.filter((task) => task.id !== id))
+    console.log('AFTER setTasks(): ', 'id to delete: ', id, '# of tasks: ', tasks.length)
+  }
+
   return (
     <div className="container">
       <Header qualifier="Awe" title="Task Tracker" />
       {/* <Header /> */}
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} onDeleteTask={deleteTask}/>
     </div>
   );
 }
