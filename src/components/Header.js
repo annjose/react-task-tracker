@@ -7,8 +7,9 @@ const Header = (props) => {
     return (
         // the following tag is HTML header tag and should be lowercase;
         // otherwise React will treat it as JSX component Header and will go infinite loop
-        <header>
+        <header className='header'>
             <h1>{qualifier} {props.title}</h1>
+            <button className='btn'>Add</button>
         </header>
     )
 }

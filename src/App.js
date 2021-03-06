@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header qualifier = "Awesome" title = "Task Tracker"/>
+      <Header qualifier = "Awe" title = "Task Tracker"/>
       {/* <Header /> */}
     </div>
   );
