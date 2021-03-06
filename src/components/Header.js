@@ -1,7 +1,8 @@
 const Header = () => {
 
     return (
-        // the following i HTML header tag should be lowercase otherwise React treats it as JSX
+        // the following tag is HTML header tag and should be lowercase;
+        // otherwise React will treat it as JSX component Header and will go infinite loop
         <header>
             <h1>Task Tracker</h1>
         </header>
