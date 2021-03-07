@@ -30,6 +30,7 @@ const initialTasks = [
 function App() {
   
   const [tasks, setTasks] = useState(initialTasks);
+  const [name, setName] = useState('');
 
   const resetTasks = () => {
     console.log('resetTasks:initialTasks= ', initialTasks);
@@ -38,6 +39,9 @@ function App() {
 
   const addTask = () => {
     console.log('adding task');
+    const newId = Math.floor(Math.random() * 1000 + 1);
+    const newTask = {id: newId, text: name, day: 'sss', reminder: false};
+    setTasks([...tasks, newTask]);
    
   }
   const deleteTask = (taskId) => {
@@ -68,12 +72,21 @@ function App() {
     setTasks(newTasks)
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="container">
       <Header qualifier="Awe" title="Task Tracker"
         onAddTask={addTask} onResetTasks={resetTasks} />
       {/* <Header /> */}
       <Tasks tasks={tasks} onDeleteTask={deleteTask} onToggleReminder={toggleReminder} />
+      <form className = 'form-control'>
+        <label type = 'label' htmlFor = 'text'>Task Name</label>
+        <input id='text' type = 'text' value = {name} onChange={ (e) => setName(e.target.value)} />
+        <input type='submit' onClick={(e) => onSubmit}/>
+      </form>
     </div>
   );
 }
